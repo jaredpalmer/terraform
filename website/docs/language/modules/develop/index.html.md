@@ -70,3 +70,15 @@ your module is not creating any new abstraction and so the module is
 adding unnecessary complexity. Just use the resource type directly in the
 calling module instead.
 
+## Refactoring module resources
+
+In shared modules and long-lived configurations you may find that you outgrow
+your initial resource names and module organization and want to restructure
+them.
+
+You can include [refactoring blocks](refactoring.html) in your modules to
+record how your resource naming and module heirarchy have changed in previous
+module versions. Terraform will use that information when creating a plan, to
+automatically reinterpret existing objects as if they had been created at the
+corresponding new addresses, and thus avoid the need to replace existing
+objects or to migrate them between addresses as a separate workflow step.
